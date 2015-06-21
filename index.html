@@ -1,214 +1,297 @@
 <!DOCTYPE html>
-<html lang="en-us"><head>
-    <meta charset="UTF-8">
-    <title>cDock by w0lfschild</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-	<link rel="shortcut icon" href="http://w0lfschild.github.io/cDock/favicon.ico">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  <style>[href^="http://twitter.com/?status="],
-[href^="http://twitter.com/home/?"],
-[href^="http://twitter.com/home?"],
-[href^="http://twitter.com/intent/tweet/?url="],
-[href^="http://twitter.com/intent/tweet?"],
-[href^="http://twitter.com/share?"],
-[href^="https://twitter.com/intent/follow?"],
-[href^="https://twitter.com/intent/retweet?tweet_id"],
-[href^="https://twitter.com/intent/tweet?"],
-[href^="https://twitter.com/share?"]
-{display:none !important;}</style><style>[href^="http://twitter.com/?status="],
-[href^="http://twitter.com/home/?"],
-[href^="http://twitter.com/home?"],
-[href^="http://twitter.com/intent/tweet/?url="],
-[href^="http://twitter.com/intent/tweet?"],
-[href^="http://twitter.com/share?"],
-[href^="https://twitter.com/intent/follow?"],
-[href^="https://twitter.com/intent/retweet?tweet_id"],
-[href^="https://twitter.com/intent/tweet?"],
-[href^="https://twitter.com/share?"]
-{display:none !important;}</style></head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">cDock</h1>
-      <h2 class="project-tagline">Dock customization for OS X 10.9 and 10.10</h2>
-      <a href="https://github.com/w0lfschild/cDock/releases/latest" class="btn">Download</a>
-  <a href="https://github.com/w0lfschild/cDock" class="btn">View on GitHub</a>
-      <a href="https://goo.gl/vF92sf" class="btn">Donate</a>
-    </section>
+<html lang="en-us">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>cDock</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+		<link rel="shortcut icon" href="http://w0lfschild.github.io/cDock/favicon.ico">
+	    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+	    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+	    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="https://ssl.gstatic.com/sites/p/ffb08c/system/app/themes/ski/standard-css-ski-ltr-ltr.css">
+		<style type="text/css">
+			#nav, #nav ul { /* all lists */
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				line-height: 0;
+			}
+			#nav a {
+				display: block;
+				width: 10em;
+			}
+			#nav li { /* all list items */
+				float: left;
+				width: 5em; /* width needed or else Opera goes nuts */
+			}
+			#nav li ul { /* second-level lists */
+				position: absolute;
+				background: white;
+				width: 11em;
+				left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+			}
+			#nav li ul ul { /* third-and-above-level lists */
+				margin: -1em 0 0 10em;
+			}
+			#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
+				left: -999em;
+			}
+			#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul { /* lists nested under hovered list items */
+				left: auto;
+			}
+			#content {
+				clear: left;
+				color: #ccc;
+			}
+		</style>
+		<script type="text/javascript">
+	 		sfHover = function() {
+	 			var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+	 			for (var i=0; i<sfEls.length; i++) {
+	 				sfEls[i].onmouseover=function() {
+	 					this.className+=" sfhover";
+	 				}
+	 				sfEls[i].onmouseout=function() {
+	 					this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+	 				}
+	 			}
+	 		}
+	 		if (window.attachEvent) window.attachEvent("onload", sfHover);
+ 		</script>
+	</head>
+	<body>
+		<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+			<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+			<tbody><tr class="sites-header-primary-row" id="sites-chrome-userheader">
+			</tr>
+			<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+			<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+			<div class="sites-header-nav">
+				<ul class="sites-header-nav-container-links" id="nav">	
+						<li class="unselected"><a class="sites-navigation-link unselected" href="http://w0lfschild.github.io/">Home</a></li>
+						<!-- <li class="current"><a class="sites-navigation-link current" href="/site/w0lfb0x992/home">cDock</a></li> -->
+						<li class="current"><a href="#">Apps</a>
+							<ul>
+								<li class="unselected"><a href="#">cDock</a></li>
+								<li class="unselected"><a href="#">dBoot</a></li>
+								<li class="unselected"><a href="#">cYose</a></li>
+								<li class="unselected"><a href="#">vpkOSX</a></li>
+								<li class="unselected"><a href="#">Misc</a></li>
+								<!-- <ul>
+									<li><a href="#">Echeneis</a>
+										<ul>
+											<li><a href="#">Sharksucker</a></li>
+											<li><a href="#">Whitefin Sharksucker</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Phtheirichthys</a>
+										<ul>
+											<li><a href="#">Slender Suckerfish</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Remora</a>
+										<ul>
+											<li><a href="#">Whalesucker</a></li>
+											<li><a href="#">Spearfish remora</a></li>
+											<li><a href="#">Marlinsucker</a></li>
+											<li><a href="#">Remora</a></li>
+											<li><a href="#">Ceylonese remora</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Remorina</a>
+										<ul>
+											<li><a href="#">White suckerfish</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Rhombochirus</a>
+										<ul>
+											<li><a href="#">R. osteochir</a></li>
+										</ul>
+									</li>
+								</ul> -->
+							</ul>
+						</li>
+						<li class="unselected"><a class="sites-navigation-link unselected" href="#">About</a></li>
+						<li class="unselected"><a class="sites-navigation-link unselected" href="#">Donate</a></li>
+				</ul>
+				<div style="clear: both;"></div>
+			</div>
+			</td>
+			</tr>
+			</tbody></table>
+		</div>
+	    <section class="page-header">
+		    <h1 class="project-name">cDock</h1>
+		    <h2 class="project-tagline">Dock customization for OS X 10.9 and 10.10</h2>
+		    <a href="https://github.com/w0lfschild/cDock/releases/latest" class="btn">Download</a>
+		  	<a href="https://github.com/w0lfschild/cDock" class="btn">GitHub</a>
+		    <!-- <a href="https://goo.gl/vF92sf" class="btn">Donate</a> -->
+	    </section>
+	    <section class="main-content">
+			<h3>
+			<a id="information" class="anchor" href="#information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Information:</h3>
 
-    <section class="main-content">
-      
+			<ul>
+			<li>cDock installs part of <a href="https://github.com/norio-nomura/EasySIMBL">EasySIMBL</a> if it is not already installed.</li>
+			<li>The install/uninstall is for the current user only.</li>
+			<li>cDock works for both the Bottom Dock and Side dock.<br>
+			</li>
+			<li>cDock works on all versions of OSX 10.9 and above.<br>
+			</li>
+			<li>
+			<strong>Note</strong>: This may break in the future.<br>
 
-<h3>
-<a id="information" class="anchor" href="#information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Information:</h3>
+			<ul>
+			<li>Currently confirmed working on:<br>
 
-<ul>
-<li>cDock installs part of <a href="https://github.com/norio-nomura/EasySIMBL">EasySIMBL</a> if it is not already installed.</li>
-<li>The install/uninstall is for the current user only.</li>
-<li>cDock works for both the Bottom Dock and Side dock.<br>
-</li>
-<li>cDock works on all versions of OSX 10.9 and above.<br>
-</li>
-<li>
-<strong>Note</strong>: This may break in the future.<br>
+			<ul>
+			<li>
+			<strong>10.9.5</strong> (13F34)<br>
+			</li>
+			<li>
+			<strong>10.10.3</strong> (14D131)<br>
+			</li>
+			</ul>
+			</li>
+			<li>Currently not working on:<br>
 
-<ul>
-<li>Currently confirmed working on:<br>
+			<ul>
+			<li>
+			<strong>10.10.4</strong> (14E26a)<br>
+			</li>
+			<li>
+			<strong>10.11</strong> (15A178w)<br>
+			</li>
+			</ul>
+			</li>
+			</ul>
+			</li>
+			</ul>
 
-<ul>
-<li>
-<strong>10.9.5</strong> (13F34)<br>
-</li>
-<li>
-<strong>10.10.3</strong> (14D131)<br>
-</li>
-</ul>
-</li>
-<li>Currently not working on:<br>
+			<h3>
+			<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits:</h3>
 
-<ul>
-<li>
-<strong>10.10.4</strong> (14E26a)<br>
-</li>
-<li>
-<strong>10.11</strong> (15A178w)<br>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+			<p><a href="http://github.com/norio-nomura/EasySIMBL">http://github.com/norio-nomura/EasySIMBL</a>    Bundle loader<br>
+			<a href="http://mstratman.github.io/cocoadialog/">http://mstratman.github.io/cocoadialog/</a>     Updater interface<br>
+			<a href="http://bluem.net/en/mac/pashua/">http://bluem.net/en/mac/pashua/</a>             Cocoa interface<br>
+			<a href="http://cooviewerzoom.web.fc2.com/blackdock">http://cooviewerzoom.web.fc2.com/blackdock</a>  Base 2D dock code<br>
+			<a href="http://github.com/b3ll/DarkDock">http://github.com/b3ll/DarkDock</a>             10.10 indicator code<br>
+			<a href="http://cooviewerzoom.web.fc2.com/">http://cooviewerzoom.web.fc2.com/</a>           Colored sidebar<br>
+			<a href="http://sveinbjorn.org/platypus">http://sveinbjorn.org/platypus</a>              App builder<br>
+			<a href="http://hasseg.org/trash">http://hasseg.org/trash</a>                     Updater trash script<br>
+			<a href="http://github.com/petroules/CocoaBackports">http://github.com/petroules/CocoaBackports</a>  System version check<br>
+			<a href="http://scafer31000.deviantart.com">http://scafer31000.deviantart.com</a>           Icon    </p>
 
-<h3>
-<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits:</h3>
+			<h3>
+			<a id="donate--httpgooglvf92sf" class="anchor" href="#donate--httpgooglvf92sf" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donate:  <a href="http://goo.gl/vF92sf">http://goo.gl/vF92sf</a>
+			</h3>
 
-<p><a href="http://github.com/norio-nomura/EasySIMBL">http://github.com/norio-nomura/EasySIMBL</a>    Bundle loader<br>
-<a href="http://mstratman.github.io/cocoadialog/">http://mstratman.github.io/cocoadialog/</a>     Updater interface<br>
-<a href="http://bluem.net/en/mac/pashua/">http://bluem.net/en/mac/pashua/</a>             Cocoa interface<br>
-<a href="http://cooviewerzoom.web.fc2.com/blackdock">http://cooviewerzoom.web.fc2.com/blackdock</a>  Base 2D dock code<br>
-<a href="http://github.com/b3ll/DarkDock">http://github.com/b3ll/DarkDock</a>             10.10 indicator code<br>
-<a href="http://cooviewerzoom.web.fc2.com/">http://cooviewerzoom.web.fc2.com/</a>           Colored sidebar<br>
-<a href="http://sveinbjorn.org/platypus">http://sveinbjorn.org/platypus</a>              App builder<br>
-<a href="http://hasseg.org/trash">http://hasseg.org/trash</a>                     Updater trash script<br>
-<a href="http://github.com/petroules/CocoaBackports">http://github.com/petroules/CocoaBackports</a>  System version check<br>
-<a href="http://scafer31000.deviantart.com">http://scafer31000.deviantart.com</a>           Icon    </p>
+			<p><em>Many thanks go out to those who have been kind enough to donate in support of this project:</em><br>
+			4LE Media, L.L.C.<br>
+			Ang Edwin<br>
+			Anonymous x1<br>
+			Anthony Giusti<br>
+			Aron Yoffe<br>
+			Barry Chiarello<br>
+			Barton Poulson<br>
+			Blair Chivers<br>
+			Bree Lassen<br>
+			Brian Sweeney<br>
+			Carles Escudero Diaz<br>
+			Cat N Co<br>
+			Charlie Lembach<br>
+			Chen Yap<br>
+			Christine Billings<br>
+			Christopher Focer<br>
+			Chuck Freiman<br>
+			Chuck Freiman<br>
+			Cihan Deribas<br>
+			Connie Spencer<br>
+			Daniel Tullis<br>
+			David Bluestone<br>
+			David Hirsh<br>
+			David Kaminsky<br>
+			Denis Stewart<br>
+			Denny Forster<br>
+			Donation<br>
+			Edgar Kraus<br>
+			Ekvia Ltd<br>
+			erick genaudet<br>
+			Frank Thurber<br>
+			Gregory A Petsko<br>
+			Gregory Pitta<br>
+			Hans Henningsson<br>
+			Howard Dym<br>
+			Howard Katz<br>
+			James Powell<br>
+			Jan Wade<br>
+			Jay Gould<br>
+			Jean-Francois Mayer<br>
+			Jean-Guy Niquet<br>
+			Jim Elsworth<br>
+			Johan Sorensson<br>
+			John Knoerr<br>
+			John Lustman<br>
+			John McGrew<br>
+			John Mueller<br>
+			John Parr<br>
+			Julie Lindsey-Halls<br>
+			Justin Dailey<br>
+			Ken Hoyle<br>
+			Kennett Sargent<br>
+			Lei Feng<br>
+			Leslie Layton<br>
+			Li Lu<br>
+			Liam o'sullivan<br>
+			Liu Chun Yin Arthur<br>
+			Lorne Hobbs<br>
+			Marc Laurendeau<br>
+			Mark Gonzales<br>
+			Mark Warren<br>
+			Marten Claridge<br>
+			Michael Fontana<br>
+			Mike Bessy<br>
+			Niels van Kruiningen<br>
+			Niyi Afelumo<br>
+			Noelle De Guzman<br>
+			Paul Babadi Bamba<br>
+			Pete Askew<br>
+			peter faiman<br>
+			Petr Smrz<br>
+			Rainer Kühnel<br>
+			Richard Nolan<br>
+			Richard Tolbert<br>
+			Robert B. Bass<br>
+			Robert Bailey<br>
+			Robert Nace<br>
+			Ross Green<br>
+			Ryoichi Morita<br>
+			Samir Benmammar<br>
+			Sean Greenwood<br>
+			Tata Parker<br>
+			Thai Tran<br>
+			Trang Tran<br>
+			Ulvi Kerimli<br>
+			Vera Rankins<br>
+			Warren Avny<br>
+			William Griffith<br>
+			William M Sorem<br>
+			Winston Maxwell<br>
+			Wolbe, Inc.<br>
+			吳 駿維    </p>
 
-<h3>
-<a id="donate--httpgooglvf92sf" class="anchor" href="#donate--httpgooglvf92sf" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donate:  <a href="http://goo.gl/vF92sf">http://goo.gl/vF92sf</a>
-</h3>
+			<h3>
+			<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License:</h3>
 
-<p><em>Many thanks go out to those who have been kind enough to donate in support of this project:</em><br>
-4LE Media, L.L.C.<br>
-Ang Edwin<br>
-Anonymous x1<br>
-Anthony Giusti<br>
-Aron Yoffe<br>
-Barry Chiarello<br>
-Barton Poulson<br>
-Blair Chivers<br>
-Bree Lassen<br>
-Brian Sweeney<br>
-Carles Escudero Diaz<br>
-Cat N Co<br>
-Charlie Lembach<br>
-Chen Yap<br>
-Christine Billings<br>
-Christopher Focer<br>
-Chuck Freiman<br>
-Chuck Freiman<br>
-Cihan Deribas<br>
-Connie Spencer<br>
-Daniel Tullis<br>
-David Bluestone<br>
-David Hirsh<br>
-David Kaminsky<br>
-Denis Stewart<br>
-Denny Forster<br>
-Donation<br>
-Edgar Kraus<br>
-Ekvia Ltd<br>
-erick genaudet<br>
-Frank Thurber<br>
-Gregory A Petsko<br>
-Gregory Pitta<br>
-Hans Henningsson<br>
-Howard Dym<br>
-Howard Katz<br>
-James Powell<br>
-Jan Wade<br>
-Jay Gould<br>
-Jean-Francois Mayer<br>
-Jean-Guy Niquet<br>
-Jim Elsworth<br>
-Johan Sorensson<br>
-John Knoerr<br>
-John Lustman<br>
-John McGrew<br>
-John Mueller<br>
-John Parr<br>
-Julie Lindsey-Halls<br>
-Justin Dailey<br>
-Ken Hoyle<br>
-Kennett Sargent<br>
-Lei Feng<br>
-Leslie Layton<br>
-Li Lu<br>
-Liam o'sullivan<br>
-Liu Chun Yin Arthur<br>
-Lorne Hobbs<br>
-Marc Laurendeau<br>
-Mark Gonzales<br>
-Mark Warren<br>
-Marten Claridge<br>
-Michael Fontana<br>
-Mike Bessy<br>
-Niels van Kruiningen<br>
-Niyi Afelumo<br>
-Noelle De Guzman<br>
-Paul Babadi Bamba<br>
-Pete Askew<br>
-peter faiman<br>
-Petr Smrz<br>
-Rainer Kühnel<br>
-Richard Nolan<br>
-Richard Tolbert<br>
-Robert B. Bass<br>
-Robert Bailey<br>
-Robert Nace<br>
-Ross Green<br>
-Ryoichi Morita<br>
-Samir Benmammar<br>
-Sean Greenwood<br>
-Tata Parker<br>
-Thai Tran<br>
-Trang Tran<br>
-Ulvi Kerimli<br>
-Vera Rankins<br>
-Warren Avny<br>
-William Griffith<br>
-William M Sorem<br>
-Winston Maxwell<br>
-Wolbe, Inc.<br>
-吳 駿維    </p>
+			<p>Pretty much the BSD license, just don't repackage it and call it your own please!<br>
+			Also if you do make some changes, feel free to make a pull request and help make things more awesome!</p>
 
-<h3>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License:</h3>
+	      <footer class="site-footer">
+	        <span class="site-footer-owner"><a href="https://github.com/w0lfschild/cDock">cDock</a> is maintained by <a href="https://github.com/w0lfschild">w0lfschild</a>.</span>
 
-<p>Pretty much the BSD license, just don't repackage it and call it your own please!<br>
-Also if you do make some changes, feel free to make a pull request and help make things more awesome!</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/w0lfschild/cDock">cDock</a> is maintained by <a href="https://github.com/w0lfschild">w0lfschild</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  
-
-
-</body></html>
+	        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+	      </footer>
+	    </section>
+	</body>
+</html>
