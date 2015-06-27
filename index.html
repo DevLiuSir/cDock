@@ -1,119 +1,93 @@
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
-	    <title>cDock</title>
-	    <meta charset='utf-8'>
-	    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<title>cDock</title>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<link rel="shortcut icon" href="http://w0lfschild.github.io/cDock/favicon.ico">
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-	    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-	    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-	    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 		<link rel="stylesheet" type="text/css" href="https://ssl.gstatic.com/sites/p/ffb08c/system/app/themes/ski/standard-css-ski-ltr-ltr.css">
 		<style type="text/css">
-			#nav, #nav ul { /* all lists */
+			#nav ul{
 				padding: 0;
-				margin: 0;
 				list-style: none;
-				line-height: 0;
+				background: #F8F8F8;
+				/*background: #f2f2f2;*/
 			}
-			#nav a {
+			#nav ul li{
+				display: inline-block;
+				position: relative;
+				line-height: 21px;
+				text-align: left;
+			}
+			#nav ul li a{
 				display: block;
-				width: 10em;
+				padding: 8px 25px;
+				color: #333;
+				text-decoration: none;
 			}
-			#nav li { /* all list items */
-				float: left;
-				width: 5em; /* width needed or else Opera goes nuts */
+			#nav ul li a:hover{
+				color: #fff;
+				background: #939393;
 			}
-			#nav li ul { /* second-level lists */
+			#nav ul li ul.dropdown{
+				min-width: 130px; /* Set width of the dropdown */
+				background: #f2f2f2;
+				display: none;
 				position: absolute;
-				background: white;
-				width: 11em;
-				left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+				z-index: 999;
+				left: 0;
 			}
-			#nav li ul ul { /* third-and-above-level lists */
-				margin: -1em 0 0 10em;
+			#nav ul li:hover ul.dropdown{
+				display: block;	/* Display the dropdown */
 			}
-			#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
-				left: -999em;
-			}
-			#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul { /* lists nested under hovered list items */
-				left: auto;
-			}
-			#content {
-				clear: left;
-				color: #ccc;
+			#nav ul li ul.dropdown li{
+				display: block;
 			}
 		</style>
-		<script type="text/javascript">
-	 		sfHover = function() {
-	 			var sfEls = document.getElementById("nav").getElementsByTagName("LI");
-	 			for (var i=0; i<sfEls.length; i++) {
-	 				sfEls[i].onmouseover=function() {
-	 					this.className+=" sfhover";
-	 				}
-	 				sfEls[i].onmouseout=function() {
-	 					this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-	 				}
-	 			}
-	 		}
-	 		if (window.attachEvent) window.attachEvent("onload", sfHover);
- 		</script>
 	</head>
-	<body>
-		
-		<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
-			<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
-				<tbody>
-					<!-- <tr class="sites-header-primary-row" id="sites-chrome-userheader"></tr> -->
-					<tr class="sites-header-primary-row" id="sites-chrome-horizontal-nav">
-						<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
-							<div class="sites-header-nav">
-								<ul class="sites-header-nav-container-links" id="nav">
-										<li class="unselected"><a class="sites-navigation-link unselected" href="http://w0lfschild.github.io/">Home</a></li>
-										<li class="current"><a href="#">Apps</a>
-											<ul>
-												<li class="current"><a href="#">cDock</a></li>
-												<li class="unselected"><a href="#">dBoot</a></li>
-												<li class="unselected"><a href="#">cYose</a></li>
-												<li class="unselected"><a href="#">vpkOSX</a></li>
-												<li class="unselected"><a href="#">Misc</a></li>
-											</ul>
-										</li>
-										<li class="unselected"><a class="sites-navigation-link unselected" href="#">About</a></li>
-										<li class="unselected"><a class="sites-navigation-link unselected" href="#">Donate</a></li>
-								</ul>
-								<div style="clear: both;"></div>
-							</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-			
-	    <section class="page-header">
-		    <h1 class="project-name">cDock</h1>
-		    <h2 class="project-tagline">Dock customization for OS X 10.9 and 10.10</h2>
-		    <a href="https://github.com/w0lfschild/cDock/releases/latest" class="btn">Download</a>
-		  	<a href="https://github.com/w0lfschild/cDock" class="btn">View GitHub</a>
-			<a href="https://github.com/w0lfschild/cDock/issues" class="btn">Issues</a>
-	    </section>
-	    <section class="main-content">
-			<h3>
-			<a id="information" class="anchor" href="#information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Information:</h3>
-
-			<ul>
-			<li>cDock installs part of <a href="https://github.com/norio-nomura/EasySIMBL">EasySIMBL</a> if it is not already installed.</li>
-			<li>cDock works for both the Bottom Dock and Side dock.</li>
-			<li>The install/uninstall is for the current user only.</li>
-			<li>Dock theming requires OSX 10.9 and above</li>
+<body>
+	<section id="nav">
+		<ul>
+			<li><a href="http://w0lfschild.github.io">Home</a></li>
+			<li>
+				<a href="#">Apps &#9662;</a>
+				<ul class="dropdown">
+					<li><a href="#">cDock</a></li>
+					<li><a href="#">Classic Yose</a></li>
+					<li><a href="#">Dark Boot</a></li>
+					<li><a href="#">VPK OSX</a></li>
+					<li><a href="#">Miscellaneous</a></li>
+				</ul>
+			</li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Donate</a></li>
 		</ul>
-		
-			<h3>
-			<a id="information" class="anchor" href="#information" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Information:</h3>
+	</section>
+	<section class="page-header">
+		<h1 class="project-name">cDock</h1>
+		<h2 class="project-tagline">Dock customization for OS X 10.9 and 10.10</h2>
+		<a href="https://github.com/w0lfschild/cDock/releases/latest" class="btn">Download</a>
+		<a href="https://github.com/w0lfschild/cDock" class="btn">View GitHub</a>
+		<a href="https://github.com/w0lfschild/cDock/issues" class="btn">Issues</a>
+	</section>
+	<section class="main-content">
+		<h3>
+			<a id="information" class="anchor" href="#information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Information:</h3>
+			<ul>
+				<li>cDock installs part of <a href="https://github.com/norio-nomura/EasySIMBL">EasySIMBL</a> if it is not already installed.</li>
+				<li>cDock works for both the Bottom Dock and Side dock.</li>
+				<li>The install/uninstall is for the current user only.</li>
+				<li>Dock theming requires OSX 10.9 and above</li>
+			</ul>
+			<h3><a id="information" class="anchor" href="#information" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Information:</h3>
 			<ul>
 				<li>Working on:
 					<ul>
@@ -129,12 +103,8 @@
 					</ul>
 				</li>
 			</ul>
-
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/wVwQ8sKsdtE" frameborder="0" allowfullscreen></iframe>
-
-			<h3>
-			<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits:</h3>
-
+			<h3><a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits:</h3>
 			<ul>
 				<li><a href="http://github.com/norio-nomura/EasySIMBL">EasySIMBL</a></li>
 				<li><a href="http://mstratman.github.io/cocoadialog/">CocoaDialog</a></li>
@@ -147,10 +117,9 @@
 				<li><a href="http://github.com/petroules/CocoaBackports">CocoaBackports</a></li>
 				<li><a href="http://scafer31000.deviantart.com">Icon</a></li>
 			</ul>
-
-	      <footer class="site-footer">
-	        <span class="site-footer-owner"><a href="https://github.com/w0lfschild/cDock">cDock</a> is maintained by <a href="https://github.com/w0lfschild">w0lfschild</a>.</span>
-	      </footer>
-	    </section>
+			<footer class="site-footer">
+				<span class="site-footer-owner"><a href="https://github.com/w0lfschild/cDock">cDock</a> is maintained by <a href="https://github.com/w0lfschild">w0lfschild</a>.</span>
+			</footer>
+		</section>
 	</body>
 </html>
